@@ -41,4 +41,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function locations(){
+        return $this->morphMany(Location::class, 'locationable');
+    }
+
+    public function deliveries() {
+        return $this->belongsToMany(VariantValues::class,
+            'user_products_deliveries',
+            'user_id',
+            'variant_value_id')
+            ->withPivot(['product_name','product_model','comments', 'location_id'])
+            ->withTimestamps();
+    }
 }

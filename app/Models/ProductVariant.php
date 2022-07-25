@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Location extends Model
+class ProductVariant extends Model
 {
     use HasFactory;
 
@@ -15,15 +15,15 @@ class Location extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'state_id',
+        'product_id',
+        'name',
     ];
 
-    public function locationable()
-    {
-        return $this->morphTo();
+    public function variants() {
+        return $this->belongsTo(Product::class);
     }
 
-    public function state() {
-        return $this->belongsTo(State::class);
+    public function variant_values() {
+        return $this->hasMany(VariantValues::class);
     }
 }

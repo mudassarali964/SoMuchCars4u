@@ -39,4 +39,34 @@ class UserFactory extends Factory
             ];
         });
     }
+
+    /**
+     * Indicate that the user should have a specific name.
+     *
+     * @param  string  $name
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function withName(string $name)
+    {
+        return $this->state(function() use ($name) {
+            return [
+                'name' => $name,
+            ];
+        });
+    }
+
+    /**
+     * Indicate that the user should have a specific email.
+     *
+     * @param  string  $email
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function withEmail(string $email)
+    {
+        return $this->state(function() use ($email) {
+            return [
+                'email' => $email,
+            ];
+        });
+    }
 }
