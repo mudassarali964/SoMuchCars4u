@@ -5,13 +5,14 @@ Once you have your development environment set up the way you like, and you have
 ```bash
 $ composer install
 $ npm install && npm run dev
-$ artisan key:generate
-$ artisan migrate:fresh --seed
-$ artisan optimize
+$ php artisan key:generate
+$ php artisan migrate:fresh --seed
+$ php artisan optimize
 ```
 
 ### Deliver Product To Customers Through command
 
+```bash
 $ artisan product:deliver
-
+```
 
