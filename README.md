@@ -13,6 +13,6 @@ $ php artisan optimize
 ### Deliver Product To Customers Through command
 
 ```bash
-$ artisan product:deliver
+$ php artisan product:deliver
 ```
 
